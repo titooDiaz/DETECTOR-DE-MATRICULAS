@@ -1,66 +1,61 @@
-# License Plate Recognizer (Argentina)
+# RECONOCIMIENTO DE CARROS Y MATRICULAS (CO)
+Reconoce Autos y las placas de carros colombianos!
 
-I set the goal of making a license plate recognizer in a weekend. This is my first image processing project. It's a simple solution, using a very curated set of images (good quality, parked cars, good lighting, etc.). I'm being not so careful with the image filters, thresholds, and the filtering of the contours, since I just wanted to learn the processes and workflow- if I wanted to make it work for a real project, now I know exactly how to approach it and which parts I would have to nitpick. Now let's get to the procedure.
+<hr/>
 
-Let's use this picture as an example.
+> [!NOTE]
+> Sigue los siguientes pasos, y asegurate de tener jupyter instalado en tu editor de codigo.
 
-<img src="https://i.imgur.com/QNRVydN.png"  width="300"/>
 
-First step is turning it into a grayscale image:
+Primero, crear un entorno virtual:
+```python
+pip install virtualenv
+```
+
+Crea un entorno virtual:
+```python
+virtualenv env
+```
+
+Instala los paquetes
+```python
+pip install -r requirements.txt
+```
+
+> [!WARNING]
+> Puede que en actualizaciones futuras de python de las bibliotecas deje de funcionar
 
 ```python
-def grayscale(img):
-    return cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+pip install -r requirements.txt
 ```
+
+
+> [!IMPORTANT]
+> Asegurate de tener todo el hardware necesarios para ejecutar el programa 
+
+> [!TIP]
+> Asegurate de poner tu camara en un lugar con buena iluminacion
 
 <img src="https://i.imgur.com/EnT7oVB.png"  width="300"/>
 
-Now we apply a threshold. This time I used hard-coded parameters, but in a real-world scenario I would have to be careful in this step. Notice how defined the license plate looks after the threshold:
+> [!CAUTION]
+> Asegurate de tener todos los requerimientos instalados antes de ejecutar el programa
 
-```python
-def apply_threshold(self, img):
-    return cv2.threshold(img, 170, 255, cv2.THRESH_BINARY_INV)[1]
-```
+<hr/>
 
-<img src="https://i.imgur.com/fCcV6Pw.png"  width="300"/>
+<br/>
 
-Then using OpenCV we detect the contours:
+# 🌍🌞🌃✨ Por si deseas contactarme 👨‍💻 :
 
-```python
-def find_contours(self, img):
-        return cv2.findContours(img, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)[0]
-```
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Miguel_Angel_Diaz-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=101010)](https://www.linkedin.com/in/miguel-angel-diaz-858379297/)
+<br/>
+[![YouTube](https://img.shields.io/badge/YouTube-titooo-FF0000?style=for-the-badge&logo=youtube&logoColor=white&labelColor=101010)](https://www.youtube.com/channel/UC7TggInDtfL8HXmFeVtvSIg)
+<br/>
+[![Twitter](https://img.shields.io/badge/Twitter-@titooo159-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white&labelColor=101010)](https://twitter.com/titooo159)
+<br/>
+[![Instagram](https://img.shields.io/badge/Instagram-@titoo.uvu-E4405F?style=for-the-badge&logo=instagram&logoColor=white&labelColor=101010)](https://www.instagram.com/titoo.uvu/)
+<br/>
+[![Web](https://img.shields.io/badge/Mi_Web!-Aun_no_disponible-14a1f0?style=for-the-badge&logo=dev.to&logoColor=white&labelColor=101010)](#)
+<br/>
+[![Email](https://img.shields.io/badge/miguelitodiaz169@gmail.com-MI_CORREO_PERSONAL-D14836?style=for-the-badge&logo=gmail&logoColor=white&labelColor=101010)](mailto:miguelitodiaz169@gmail.com)
 
-<img src="https://i.imgur.com/nkhSpCz.png"  width="300"/>
-
-And now we filter them by aspect ratio, width and height. I searched for the real width and height of the license plates, and calculated the aspect ratio. With these filters, we end up with only one contour, that being the license plate.
-
-<img src="https://i.imgur.com/cW1u9Up.png"  width="300"/>
-
-Now we can crop the license plate out of the image:
-
-```python
-def crop_license_plate(self, img, license):
-    x, y, w, h = cv2.boundingRect(license)
-    return img[y:y+h,x:x+w]
-```
-
-<img src="https://i.imgur.com/wOX0ENr.png"  width="300"/>
-
-Once again, grayscale it and apply a threshold:
-
-<img src="https://i.imgur.com/iWI84zN.png"  width="300"/>
-
-Now using an skimage function we remove the borders, invert the image, and this is the final result:
-
-```python
-def clear_border(self, img):
-    return skimage.segmentation.clear_border(img)
-
-def invert_image(self, img):
-    return cv2.bitwise_not(img)
-```
-
-<img src="https://i.imgur.com/3lxtMvb.png"  width="300"/>
-
-We can already feed this picture to pytesseract and it succesfully recognizes the characters.
