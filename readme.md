@@ -23,7 +23,10 @@ pip install -r requirements.txt
 ```
 
 > [!WARNING]
-> Puede que en actualizaciones futuras de python de las bibliotecas deje de funcionar
+> Asegurate de usar imagenes de alta calidad y por lo menos con una camara de 16MP 
+
+> [!TIP]
+> Lee los comentarios del codigo si necesitas ayuda
 
 ```python
 pip install -r requirements.txt
@@ -31,10 +34,11 @@ pip install -r requirements.txt
 
 
 > [!IMPORTANT]
-> Asegurate de tener todo el hardware necesarios para ejecutar el programa 
+> Al momento de instalar tesseract guarda tu ruta de almacenamiento, es decir donde lo guardas
+> Si al momento de usar el codigo no te funciona, intenta reiniciar visual Studio Code, El error se solucionara
 
-> [!TIP]
-> Asegurate de poner tu camara en un lugar con buena iluminacion
+
+
 
 <img src="https://i.imgur.com/EnT7oVB.png"  width="300"/>
 
