@@ -1,4 +1,9 @@
-# RECONOCIMIENTO DE CARROS Y MATRICULAS (CO)
+<p align="center">
+  <img width="150px" src="https://i.ibb.co/bXvzjXm/LOGO-h1.png" />
+  <h2 align="center">[Miguel Angel Diaz]([https://github.com/titooDiaz]</h2>
+</p>
+
+# RECONOCIMIENTO DE CARROS Y MATRICULAS (COLOMBIANAS)
 Reconoce Autos y las placas de carros colombianos!
 
 <hr/>
