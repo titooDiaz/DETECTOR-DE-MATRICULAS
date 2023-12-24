@@ -1,6 +1,5 @@
 <p align="center">
   <img width="150px" src="https://i.ibb.co/bXvzjXm/LOGO-h1.png" />
-  <h2 align="center">Miguel Angel Diaz</h2>
 </p>
 
 # RECONOCIMIENTO DE CARROS Y MATRICULAS (COLOMBIANAS)
@@ -11,41 +10,33 @@ Reconoce Autos y las placas de carros colombianos!
 > [!NOTE]
 > Sigue los siguientes pasos, y asegurate de tener jupyter instalado en tu editor de codigo.
 
-
-Primero, crear un entorno virtual:
+Primero, crear un entorno virtual (en la consola):
 ```python
 pip install virtualenv
 ```
 
-Crea un entorno virtual:
+Crea un entorno virtual (consola):
 ```python
 virtualenv env
 ```
 
-Instala los paquetes
+Instala los paquetes (en la consola, asegurate de estar ubicado en el directorio correcto)
 ```python
 pip install -r requirements.txt
 ```
 
 > [!WARNING]
-> Asegurate de usar imagenes de alta calidad y por lo menos con una camara de 16MP 
+> En nuestro programa utilizamos diferentes archivos, estos archivos pesan bastante...
+> <br>
+> Asegurate de instalarlos en el sigueinte link:
+> 
 
 > [!TIP]
 > Lee los comentarios del codigo si necesitas ayuda
 
-```python
-pip install -r requirements.txt
-```
-
-
 > [!IMPORTANT]
 > Al momento de instalar tesseract guarda tu ruta de almacenamiento, es decir donde lo guardas
 > Si al momento de usar el codigo no te funciona, intenta reiniciar visual Studio Code, El error se solucionara
-
-
-
-
-<img src="https://i.imgur.com/EnT7oVB.png"  width="300"/>
 
 > [!CAUTION]
 > Asegurate de tener todos los requerimientos instalados antes de ejecutar el programa
