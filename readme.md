@@ -29,14 +29,28 @@ pip install -r requirements.txt
 > En nuestro programa utilizamos diferentes archivos, estos archivos pesan bastante...
 > <br>
 > Asegurate de instalarlos en el sigueinte link:
-> 
+> http://www.mediafire.com/folder/gbct2kyysrolh6a,r8pt4koeku3e4cb/shared
+> <br>
+> Estos archivos nos ayduaran a detectar los autos. Es una parte importante del programa
+> <br>
+> Utilizaremos YOLO, es un modelo que nos ayudara a detectar los carros en CV2 (biblioteca de python)
+> ya que realizar un modelo desde 0 nos peude tener un grado de dificultad mayor
+> ES NECESARIO TENER LOS ARCHIVOS Y UBICARLOS EN UNA CARPETA QUE EL PROGRAMA LO ENTIENDA
 
 > [!TIP]
 > Lee los comentarios del codigo si necesitas ayuda
 
 > [!IMPORTANT]
 > Al momento de instalar tesseract guarda tu ruta de almacenamiento, es decir donde lo guardas
+> ESTE ES EL LINK PARA INSTALAR EL PROGRAMA: https://github.com/UB-Mannheim/tesseract/wiki
+> <br>
+> En esta linea de codigo debes agregar tu ruta de instalcion, en mi caso:
+> ```python
+> pytesseract.pytesseract.tesseract_cmd=r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+> ```
 > Si al momento de usar el codigo no te funciona, intenta reiniciar visual Studio Code, El error se solucionara
+> <br>
+> Si no se soluciona asegurate de tener tu directorio de instalacion bien agregado y tener instalado el programa correctamente
 
 > [!CAUTION]
 > Asegurate de tener todos los requerimientos instalados antes de ejecutar el programa
